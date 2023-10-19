@@ -9,7 +9,7 @@
 
 Pour ce connecter en ssh, lancer la VM avec la commande ``` Vbox LicencePro2023 ```  
 Pour modifier sshd_config  
-![nano sshd_config](./asset/nano_sshd_config)  
+![nano sshd_config](./asset/nano_sshd_config.png)  
 La configuration nécessaire pour permettre les connexions root distante avec mot de passe : trouver la ligne "#PermitRootLogin prohibit-password" et rajouter une ligne en dessous avec "PermitRootLogin yes".  
 ![man sshd_config](./asset/man_sshd_config.png)  
 Il existe plusieurs options concernant le PermitRootLogin :  

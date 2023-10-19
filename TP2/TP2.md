@@ -28,6 +28,8 @@ Pour créer le couple de clef d'authentifiaction privé/publique ``` ssh-keygen 
 
 Copie de la clé publique sur le serveur.  
 ![Envoyer la clé sur le serveur](./asset/copie_cle.png)  
+Mettre une passphrase et necessaire, voir obligatoire. C'est une sécurité suplémentaire, pour ce connecter il faut la clé et la passphrase.  
+Donc du temps suplémentaire pour devoir trouver les accès au serveur.  
 
 Restriction du fichier authorized-keys, droit de lecture, écriture et execution pour le propriétaire seulement.  
 ![Droit Lecture/Ecriture/Execution](./asset/droit_ecriture_lecture_execution.png)  
@@ -81,4 +83,65 @@ Renvoie qu'il faut installer psmisc.
 ``` pstree ```  
 
 4. 
+![Commande : top](./asset/2-top%20cpu.png)  
+La liste des processus triée par occupation mémoire décroissante :  
+![Shift + m](./asset/shift%20m.png)  
+Le processus le plus gourmand : le 1009  
+![Shift + f](./asset/shift%20f.png)  
+Mettre en couleur :  
+![touche z](./asset/top%20z.png)  
+Changer de colonne de trie :  
+![touche f](./asset/top%20z%20f.png)  
+htop : il facilite la compréhension des données grâce à son interface interactive pour trier les résultats, mais il consomme plus de ressources.  
+![htop](./asset/htop.png)  
 
+
+### 3 Arrêt d'un proucessus
+
+Ecriture des script :  
+![date.sh](./asset/nano%20date.sh.png)  
+![date-toto.sh](./asset/nano%20date-toto.png)  
+Mise en arrière plan :  
+![Mise en arrière plan](./asset/mise%20arrière%20plan.png)  
+Arrêt des horloges :  
+![Arrêt des horloges](./asset/jobs%20fg%20contrlc.png)  
+Fichier « date.sh » :  
+#!/bin/sh => Signifie qu’il est recommander d’exécuter le script avec la commande « sh ».  
+while true; => Signifie une boucle infinie.  
+do => Début de la boucle.  
+sleep 1; => Met le processus en pause pendant 1 seconde.  
+echo -n ’date ’; => Affiche « date » sans le retour à la ligne (-n).  
+date +%T; => Affiche la date et l’heure actuelle au format heure uniquement (+%T).  
+done => Fin de la boucle.  
+
+Fichier « date-toto.sh » :  
+Reprendre les explications du fichier « date.sh ».  
+--date ’5 hour ago’ => Précise la date de départ qui est la date actuelle moins 5 heures.  
+
+
+### 4 Les tubes
+
+![Man tee](./asset/man%20tee.png)  
+![Man cat](./asset/man%20cat.png)  
+``` ls | cat ``` La commande permet de lister de manière structurer les fichiers (avec retour à la ligne) présent dans le répertoire.  
+``` ls -l | cat > liste ``` La commande permet de créer le fichier « liste » et d’enregistrer le résultat de la commande « ls -l » dedans.  
+``` ls -l | tee liste  ``` La commande fait la même chose que la commande précédente sauf qu’elle affiche le résultat aussi.  
+```  ls -l | tee liste | wc -l ``` La commande fait la même chose que la commande précédente mais au lieu d’afficher le résultat du fichier, elle affiche le nombre de ligne occupé dans le fichier.  
+
+
+### 5  Journal système rsyslog
+
+``` systemctl status rsyslog ```  rsyslog n'est pas reconnue.  
+``` /var/log ```  et ``` /var/spool/rsyslog  ```   
+Cron est un programme pour exécuter automatiquement des scripts, des commandes ou des logiciels à une date et une heure spécifiée précise, ou selon un cycle défini à l’avance Chaque utilisateur a un fichier crontab, lui permettant d'indiquer les actions à exécuter. Cron est parfois appelé "planificateur de tâches" ou "gestionnaire de tâches planifiées".  
+tail permet d’afficher la fin d’un fichier en temps réel.  
+Le fichier "/etc/logrotate.conf" permet de configurer la rotation des logs, c’est-à-dire si les logs les plus anciens doivent être archivé ou supprimé.  
+
+
+Différentes sources :  
+(https://blog.garamotte.net/posts/2018/01/07/fr-limit-brute-force-attacks-on-the-ssh-service.html)  
+(https://www.it-connect.fr/chapitres/authentification-ssh-par-cles/?utm_content=cmp-true)  
+(https://www.digitalocean.com/community/tutorials/how-to-use-ssh-to-connect-to-a-remote-server-fr)  
+(https://www.hostinger.fr/tutoriels/gerer-processus-linux-ligne-commande#:~:text=La%20commande%20top%20est%20utilis%C3%A9e,plac%C3%A9%20en%20t%C3%AAte%20de%20liste.)  
+(https://www.malekal.com/commande-jobs-fg-et-bg-sur-linux-utilisations-et-exemples/)  
+(https://www.it-connect.fr/chapitres/authentification-ssh-par-cles/?utm_content=cmp-true)  

@@ -36,7 +36,10 @@ Résultat :
 ![Résultat listedir.sh](./asset/contenu%20rep/resultat.png)  
 
 
-### Lister les utilisateurs
+*A partir de l'exercie suivant le tp à été réalisé sur mon pc perso. J'utilise Ubuntu.*  
+
+
+### Lister les utilisateurs  
 
 ``` bash
 #!/bin/bash
@@ -51,6 +54,56 @@ Script :
 Résultat :  
 ![Résultat avec cut](./asset/Lister%20utilisateurs/resultat.png)  
 Script avec awk :  
-![Script avec cut](./asset/Lister%20utilisateurs/nanoAWK.png)  
+![Script avec awk](./asset/Lister%20utilisateurs/nanoAWK.png)  
 Résultat avec awk:  
-![Résultat avec cut](./asset/Lister%20utilisateurs/resultatAWK.png)  
+![Résultat avec awk](./asset/Lister%20utilisateurs/resultatAWK.png)  
+
+
+###  Mon utilisateur existe t’il  
+
+Script :  
+![Script utiexiste.sh](./asset/utilisateur%20existe/nano.png)  
+![Script suite utiexiste.sh](./asset/utilisateur%20existe/nano_fin.png)  
+Résultat :  
+![Resultat utiexiste.sh](./asset/utilisateur%20existe/resultat.png)  ''
+
+
+### Creation utilisateur  
+
+Script :  
+![Script creauti.sh](./asset/creation%20utilisateur/nano_debut.png)  
+![Script suite creauti.sh](./asset/creation%20utilisateur/nano_fin.png)  
+Résultat :  
+![Resultat creauti.sh](./asset/creation%20utilisateur/resultat.png)  
+*J'ai un problème avec ce script dans tout les cas le script s'arrète parce que lors du teste de répertoire, le résultat est toujours le même : le répertoire existe déjà.*  
+*Je ne comprends pas pour le moment.*  
+
+
+###  Lecture au clavier
+
+1. Essayer les commandes suivantes :  
+``` bash
+echo -n "Entrer votre nom: "
+read nom
+echo "Votre nom est $nom"
+```  
+![Résultat du test](./asset/lecture%20clavier/resultat_essaie_commandes.png)  
+2. Teste file et more :  
+![Testes](./asset/lecture%20clavier/file_more.png)  
+- **Comment quitter more ?** Pour quitter more, on appuie sur "q".  
+- **Comment avancer d’une ligne ?** Pour avancer d'une ligne, on appuie sur la touche "entrer" ou sur la flèche vers le bas.  
+- **Comment avancer d’une page ?** Pour avancer d'une page, on appuie sur la touche "espace".  
+- **Comment remonter d’une page ?** Pour remonter d'une page, on appuie sur la touche "b".  
+- **Comment chercher une chaîne de caractères ? Passer à l’occurence suivante ?** Pour rechercher une chaîne de caractères, on appuie sur "/". Cela permet de saisir la chaîne que l'on souhaite rechercher, puis on appuie sur "Entrée". Pour passer à l'occurrence suivante, on appuie sur "n".  
+3. Script :  
+![Script clavier.sh](./asset/lecture%20clavier/script.png)  
+Résultat :  
+![Resultat clavier.sh](./asset/lecture%20clavier/resultat_finale.png)  
+
+
+### Appréciation
+
+Script :  
+![Script appreciation.sh](./asset/appreciation/script.png)  
+Résultat :  
+![Resultat appreciation.sh](./asset/appreciation/resultat.png)  

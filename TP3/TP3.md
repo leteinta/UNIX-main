@@ -72,11 +72,10 @@ Résultat :
 
 Script :  
 ![Script creauti.sh](./asset/creation%20utilisateur/nano_debut.png)  
-![Script suite creauti.sh](./asset/creation%20utilisateur/nano_fin.png)  
+![Script suite creauti.sh](./asset/creation%20utilisateur/nano_fin_corr.png)  
 Résultat :  
 ![Resultat creauti.sh](./asset/creation%20utilisateur/resultat.png)  
-*J'ai un problème avec ce script dans tout les cas le script s'arrète parce que lors du teste de répertoire, le résultat est toujours le même : le répertoire existe déjà.*  
-*Je ne comprends pas pour le moment.*  
+![Resultat suite creauti.sh](./asset/creation%20utilisateur/resultat2.png)  
 
 
 ###  Lecture au clavier
